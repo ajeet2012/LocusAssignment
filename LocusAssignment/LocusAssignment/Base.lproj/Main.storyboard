@@ -131,10 +131,13 @@
                                             <constraint firstAttribute="width" constant="45" id="tXf-u0-WMi"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="back-96"/>
+                                        <connections>
+                                            <action selector="backButtonAction:" destination="d8j-ql-7eP" eventType="touchUpInside" id="rsP-VA-vFr"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lB-Ls-Tpc">
-                                        <rect key="frame" x="70" y="62" width="324" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="70" y="57.5" width="324" height="30.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -151,9 +154,9 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tqK-ck-riZ">
                                 <rect key="frame" x="0.0" y="110" width="414" height="752"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="103" id="odt-Jl-Hx6">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="WeatherListTableViewCell" rowHeight="103" id="odt-Jl-Hx6" customClass="WeatherListTableViewCell" customModule="LocusAssignment" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="103"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="odt-Jl-Hx6" id="c11-gB-rlt">
@@ -163,16 +166,17 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgK-Rt-Kc5">
                                                     <rect key="frame" x="20" y="41" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jq7-Bn-hZy">
                                                     <rect key="frame" x="352" y="41" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Jq7-Bn-hZy" secondAttribute="trailing" id="0Ip-7c-8gA"/>
                                                 <constraint firstItem="Jq7-Bn-hZy" firstAttribute="centerY" secondItem="c11-gB-rlt" secondAttribute="centerY" id="ctG-yx-YdC"/>
@@ -180,6 +184,11 @@
                                                 <constraint firstItem="vgK-Rt-Kc5" firstAttribute="leading" secondItem="c11-gB-rlt" secondAttribute="leadingMargin" id="qbQ-Us-bkm"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="tempratureLabel" destination="Jq7-Bn-hZy" id="bGS-xz-ajl"/>
+                                            <outlet property="weatherLabel" destination="vgK-Rt-Kc5" id="6X9-6B-v5o"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -202,6 +211,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="f0j-FQ-dWc"/>
                     <connections>
+                        <outlet property="headerLabel" destination="6lB-Ls-Tpc" id="nMn-5Q-2KL"/>
+                        <outlet property="tableViewWeather" destination="tqK-ck-riZ" id="1Bw-Ze-A5H"/>
                         <segue destination="aWH-Zu-QHv" kind="show" identifier="WeatherDetailViewController" id="3YQ-a3-myn"/>
                     </connections>
                 </viewController>
@@ -229,7 +240,7 @@
                                         <state key="normal" backgroundImage="back-96"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u47-tt-DuG">
-                                        <rect key="frame" x="70" y="62" width="324" height="21"/>
+                                        <rect key="frame" x="60" y="62" width="334" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -239,7 +250,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="6d2-A0-21O"/>
                                     <constraint firstItem="iwV-Hh-9Hh" firstAttribute="leading" secondItem="Wl1-mG-dqt" secondAttribute="leading" constant="15" id="fP7-J1-f3E"/>
-                                    <constraint firstItem="u47-tt-DuG" firstAttribute="leading" secondItem="iwV-Hh-9Hh" secondAttribute="trailing" constant="10" id="hNU-it-sIj"/>
+                                    <constraint firstItem="u47-tt-DuG" firstAttribute="leading" secondItem="iwV-Hh-9Hh" secondAttribute="trailing" id="hNU-it-sIj"/>
                                     <constraint firstAttribute="trailing" secondItem="u47-tt-DuG" secondAttribute="trailing" constant="20" id="kV7-6V-v6O"/>
                                     <constraint firstItem="u47-tt-DuG" firstAttribute="centerY" secondItem="iwV-Hh-9Hh" secondAttribute="centerY" id="vjE-cf-OUW"/>
                                     <constraint firstAttribute="bottom" secondItem="iwV-Hh-9Hh" secondAttribute="bottom" constant="15" id="x5Z-oF-g8o"/>

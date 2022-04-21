@@ -25,6 +25,8 @@
 		7732D8882810E9C5003E08A9 /* SearchCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732D8872810E9C5003E08A9 /* SearchCityViewModel.swift */; };
 		7732D88B2810E9D1003E08A9 /* SearchCityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732D88A2810E9D1003E08A9 /* SearchCityModel.swift */; };
 		7732D88E2810EC5C003E08A9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732D88D2810EC5C003E08A9 /* Constants.swift */; };
+		7732D89128112DE1003E08A9 /* WeatherListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732D89028112DE1003E08A9 /* WeatherListModel.swift */; };
+		7732D894281133F8003E08A9 /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732D893281133F8003E08A9 /* WeatherListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		7732D8872810E9C5003E08A9 /* SearchCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityViewModel.swift; sourceTree = "<group>"; };
 		7732D88A2810E9D1003E08A9 /* SearchCityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityModel.swift; sourceTree = "<group>"; };
 		7732D88D2810EC5C003E08A9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7732D89028112DE1003E08A9 /* WeatherListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListModel.swift; sourceTree = "<group>"; };
+		7732D893281133F8003E08A9 /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				7732D87D2810E542003E08A9 /* WeatherListViewController.swift */,
+				7732D89028112DE1003E08A9 /* WeatherListModel.swift */,
+				7732D893281133F8003E08A9 /* WeatherListViewModel.swift */,
 			);
 			path = WeatherList;
 			sourceTree = "<group>";
@@ -248,9 +254,11 @@
 				7732D87E2810E542003E08A9 /* WeatherListViewController.swift in Sources */,
 				7732D8692810DA2C003E08A9 /* GeoCodingResponse.swift in Sources */,
 				7732D8852810E858003E08A9 /* Extensions.swift in Sources */,
+				7732D894281133F8003E08A9 /* WeatherListViewModel.swift in Sources */,
 				7732D8342810D631003E08A9 /* AppDelegate.swift in Sources */,
 				7732D8362810D631003E08A9 /* SceneDelegate.swift in Sources */,
 				7732D8812810E5A6003E08A9 /* WeatherDetailViewController.swift in Sources */,
+				7732D89128112DE1003E08A9 /* WeatherListModel.swift in Sources */,
 				7732D8782810E4FC003E08A9 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
