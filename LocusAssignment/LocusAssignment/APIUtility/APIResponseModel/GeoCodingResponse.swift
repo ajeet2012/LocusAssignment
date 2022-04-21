@@ -13,11 +13,14 @@ struct GeoCodingResponseElement: Codable {
     let localNames: LocalNames?
     let lat, lon: Double?
     let country, state: String?
-
+    let cod:String?
+    let message:String?
     enum CodingKeys: String, CodingKey {
         case name
         case localNames = "local_names"
         case lat, lon, country, state
+        case cod
+        case message
     }
 }
 

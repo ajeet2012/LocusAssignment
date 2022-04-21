@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Splash View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LocusAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="SplashViewController" customModule="LocusAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,23 +32,24 @@
                     </view>
                     <navigationItem key="navigationItem" id="arR-YE-bP2"/>
                     <connections>
-                        <segue destination="U3i-xa-fNK" kind="show" id="e7F-em-Y7O"/>
+                        <segue destination="U3i-xa-fNK" kind="show" identifier="SearchCityViewController" id="e7F-em-Y7O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="910.14492753623199" y="65.625"/>
         </scene>
-        <!--View Controller-->
+        <!--Search City View Controller-->
         <scene sceneID="yoP-Rx-GcM">
             <objects>
-                <viewController id="U3i-xa-fNK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchCityViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="U3i-xa-fNK" customClass="SearchCityViewController" customModule="LocusAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nim-7P-hrb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="znt-sW-d5R">
                                 <rect key="frame" x="40" y="194" width="334" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="g2r-GZ-gyE"/>
                                 </constraints>
@@ -67,6 +68,9 @@
                                 <state key="normal" title="Lookup">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="lookupButtonAction:" destination="U3i-xa-fNK" eventType="touchUpInside" id="5C8-WP-aVO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xxt-m0-PhP"/>
@@ -83,7 +87,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="l5M-UF-ai2"/>
                     <connections>
-                        <segue destination="d8j-ql-7eP" kind="show" id="2du-C0-7fG"/>
+                        <outlet property="cityTextField" destination="znt-sW-d5R" id="bKB-Hq-D1t"/>
+                        <outlet property="lookupButton" destination="UUf-ym-O0l" id="vvi-pt-3VA"/>
+                        <segue destination="d8j-ql-7eP" kind="show" identifier="WeatherListViewController" id="2du-C0-7fG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQX-Ok-inv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -107,10 +113,10 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="65.625"/>
         </scene>
-        <!--View Controller-->
+        <!--Weather List View Controller-->
         <scene sceneID="ViM-bE-zfm">
             <objects>
-                <viewController id="d8j-ql-7eP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WeatherListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d8j-ql-7eP" customClass="WeatherListViewController" customModule="LocusAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Fz-gn-Ey8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,10 +201,64 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="f0j-FQ-dWc"/>
+                    <connections>
+                        <segue destination="aWH-Zu-QHv" kind="show" identifier="WeatherDetailViewController" id="3YQ-a3-myn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qs5-gD-s5H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2744.9275362318845" y="65.625"/>
+        </scene>
+        <!--Weather Detail View Controller-->
+        <scene sceneID="9ir-J8-Oro">
+            <objects>
+                <viewController storyboardIdentifier="WeatherDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aWH-Zu-QHv" customClass="WeatherDetailViewController" customModule="LocusAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5M1-yR-L57">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wl1-mG-dqt">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwV-Hh-9Hh">
+                                        <rect key="frame" x="15" y="50" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="VrX-Vj-TsP"/>
+                                            <constraint firstAttribute="height" constant="45" id="rAa-on-YhC"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="back-96"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u47-tt-DuG">
+                                        <rect key="frame" x="70" y="62" width="324" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="6d2-A0-21O"/>
+                                    <constraint firstItem="iwV-Hh-9Hh" firstAttribute="leading" secondItem="Wl1-mG-dqt" secondAttribute="leading" constant="15" id="fP7-J1-f3E"/>
+                                    <constraint firstItem="u47-tt-DuG" firstAttribute="leading" secondItem="iwV-Hh-9Hh" secondAttribute="trailing" constant="10" id="hNU-it-sIj"/>
+                                    <constraint firstAttribute="trailing" secondItem="u47-tt-DuG" secondAttribute="trailing" constant="20" id="kV7-6V-v6O"/>
+                                    <constraint firstItem="u47-tt-DuG" firstAttribute="centerY" secondItem="iwV-Hh-9Hh" secondAttribute="centerY" id="vjE-cf-OUW"/>
+                                    <constraint firstAttribute="bottom" secondItem="iwV-Hh-9Hh" secondAttribute="bottom" constant="15" id="x5Z-oF-g8o"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iy5-2T-lnT"/>
+                        <color key="backgroundColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Wl1-mG-dqt" firstAttribute="top" secondItem="5M1-yR-L57" secondAttribute="top" id="MW3-D1-Fgi"/>
+                            <constraint firstItem="Wl1-mG-dqt" firstAttribute="leading" secondItem="iy5-2T-lnT" secondAttribute="leading" id="XXd-g1-GWm"/>
+                            <constraint firstItem="iy5-2T-lnT" firstAttribute="trailing" secondItem="Wl1-mG-dqt" secondAttribute="trailing" id="bFc-jy-fcg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="L9q-Kt-uN9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qvp-gc-1gD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3664" y="66"/>
         </scene>
     </scenes>
     <resources>
