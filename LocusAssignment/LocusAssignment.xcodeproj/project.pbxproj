@@ -13,6 +13,10 @@
 		7732D83B2810D631003E08A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7732D8392810D631003E08A9 /* Main.storyboard */; };
 		7732D83D2810D633003E08A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7732D83C2810D633003E08A9 /* Assets.xcassets */; };
 		7732D8402810D633003E08A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7732D83E2810D633003E08A9 /* LaunchScreen.storyboard */; };
+		7732D8602810D90F003E08A9 /* ApiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732D85E2810D90F003E08A9 /* ApiURL.swift */; };
+		7732D8612810D90F003E08A9 /* HttpUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732D85F2810D90F003E08A9 /* HttpUtility.swift */; };
+		7732D8652810DA14003E08A9 /* CurrentWheatherDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732D8642810DA13003E08A9 /* CurrentWheatherDataResponse.swift */; };
+		7732D8692810DA2C003E08A9 /* GeoCodingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732D8682810DA2C003E08A9 /* GeoCodingResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		7732D83C2810D633003E08A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7732D83F2810D633003E08A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7732D8412810D633003E08A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7732D85E2810D90F003E08A9 /* ApiURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiURL.swift; sourceTree = "<group>"; };
+		7732D85F2810D90F003E08A9 /* HttpUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpUtility.swift; sourceTree = "<group>"; };
+		7732D8642810DA13003E08A9 /* CurrentWheatherDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWheatherDataResponse.swift; sourceTree = "<group>"; };
+		7732D8682810DA2C003E08A9 /* GeoCodingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCodingResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 		7732D8322810D631003E08A9 /* LocusAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				7732D8482810D8DD003E08A9 /* APIUtility */,
 				7732D8332810D631003E08A9 /* AppDelegate.swift */,
 				7732D8352810D631003E08A9 /* SceneDelegate.swift */,
 				7732D8372810D631003E08A9 /* ViewController.swift */,
@@ -65,6 +74,25 @@
 				7732D8412810D633003E08A9 /* Info.plist */,
 			);
 			path = LocusAssignment;
+			sourceTree = "<group>";
+		};
+		7732D8482810D8DD003E08A9 /* APIUtility */ = {
+			isa = PBXGroup;
+			children = (
+				7732D8632810DA02003E08A9 /* APIResponseModel */,
+				7732D85E2810D90F003E08A9 /* ApiURL.swift */,
+				7732D85F2810D90F003E08A9 /* HttpUtility.swift */,
+			);
+			path = APIUtility;
+			sourceTree = "<group>";
+		};
+		7732D8632810DA02003E08A9 /* APIResponseModel */ = {
+			isa = PBXGroup;
+			children = (
+				7732D8642810DA13003E08A9 /* CurrentWheatherDataResponse.swift */,
+				7732D8682810DA2C003E08A9 /* GeoCodingResponse.swift */,
+			);
+			path = APIResponseModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +165,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7732D8652810DA14003E08A9 /* CurrentWheatherDataResponse.swift in Sources */,
+				7732D8612810D90F003E08A9 /* HttpUtility.swift in Sources */,
+				7732D8602810D90F003E08A9 /* ApiURL.swift in Sources */,
 				7732D8382810D631003E08A9 /* ViewController.swift in Sources */,
+				7732D8692810DA2C003E08A9 /* GeoCodingResponse.swift in Sources */,
 				7732D8342810D631003E08A9 /* AppDelegate.swift in Sources */,
 				7732D8362810D631003E08A9 /* SceneDelegate.swift in Sources */,
 			);
