@@ -12,7 +12,7 @@ class WeatherListTableViewCell:UITableViewCell{
     @IBOutlet weak var tempratureLabel:UILabel!
 }
 
-class WeatherListViewController: UIViewController {
+class WeatherListViewController: MasterViewController {
 
     var viewModel:WeatherListViewModel = WeatherListViewModel()
     @IBOutlet weak var headerLabel: UILabel!
@@ -40,7 +40,12 @@ class WeatherListViewController: UIViewController {
     }
     //MARK:- API call
     func callWeatherApi(){
+        self.loadingView.startAnimating()
         self.viewModel.apiCallToFetchWeatherReport {
+            
+            DispatchQueue.main.async {
+                self.loadingView.stopAnimating()
+            }
             if let response:CurrentWheatherDataResponse = self.viewModel.model.response{
                 
                 if let statusCode = response.cod{
@@ -64,12 +69,24 @@ class WeatherListViewController: UIViewController {
                 //if let statusCode = response.
             
         } errorHandler: { (error) in
-            
+            DispatchQueue.main.async {
+                self.loadingView.stopAnimating()
+            }
             self.showAlertWithMessage(message: error.localizedDescription)
 
         }
 
         
+    }
+    //MARK:- Navigation
+    func showDetailScreen(){
+        guard let responseObj = self.viewModel.model.response else{return}
+        let vc:WeatherDetailViewController = self.storyboard?.instantiateViewController(identifier: "WeatherDetailViewController") as! WeatherDetailViewController      
+        vc.response = responseObj
+        if let cityName:String = responseObj.name{
+            vc.cityNameString = cityName
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
@@ -97,7 +114,7 @@ extension WeatherListViewController:UITableViewDelegate, UITableViewDataSource{
         if let tempreture = self.viewModel.model.response?.main?.temp{
          
             let temprecture:Double = tempreture - 273.15
-            cell.tempratureLabel.text = String(format: "%.2f",temprecture)
+            cell.tempratureLabel.text = String(format: "%.2f° C",temprecture)
                 
         }
 
@@ -106,5 +123,9 @@ extension WeatherListViewController:UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50.0
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.showDetailScreen()
     }
 }

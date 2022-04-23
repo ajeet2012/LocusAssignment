@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,9 +27,12 @@
 		7732D88E2810EC5C003E08A9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732D88D2810EC5C003E08A9 /* Constants.swift */; };
 		7732D89128112DE1003E08A9 /* WeatherListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732D89028112DE1003E08A9 /* WeatherListModel.swift */; };
 		7732D894281133F8003E08A9 /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732D893281133F8003E08A9 /* WeatherListViewModel.swift */; };
+		7732D89E2813F198003E08A9 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732D89D2813F198003E08A9 /* MasterViewController.swift */; };
+		D3ACD0A6DDFF42626A9DF6CF /* Pods_LocusAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51919EDA2AB15072FC7803C2 /* Pods_LocusAssignment.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		51919EDA2AB15072FC7803C2 /* Pods_LocusAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocusAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7732D8302810D631003E08A9 /* LocusAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocusAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7732D8332810D631003E08A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7732D8352810D631003E08A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +55,9 @@
 		7732D88D2810EC5C003E08A9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7732D89028112DE1003E08A9 /* WeatherListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListModel.swift; sourceTree = "<group>"; };
 		7732D893281133F8003E08A9 /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
+		7732D89D2813F198003E08A9 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		ED53BD0C2F09E5764EB1A888 /* Pods-LocusAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocusAssignment.release.xcconfig"; path = "Target Support Files/Pods-LocusAssignment/Pods-LocusAssignment.release.xcconfig"; sourceTree = "<group>"; };
+		FFC432B9A5936CBB00688655 /* Pods-LocusAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocusAssignment.debug.xcconfig"; path = "Target Support Files/Pods-LocusAssignment/Pods-LocusAssignment.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,17 +65,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3ACD0A6DDFF42626A9DF6CF /* Pods_LocusAssignment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4723583A7F8D53A2268387FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FFC432B9A5936CBB00688655 /* Pods-LocusAssignment.debug.xcconfig */,
+				ED53BD0C2F09E5764EB1A888 /* Pods-LocusAssignment.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5A1DB108653A86232172492F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51919EDA2AB15072FC7803C2 /* Pods_LocusAssignment.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7732D8272810D631003E08A9 = {
 			isa = PBXGroup;
 			children = (
 				7732D8322810D631003E08A9 /* LocusAssignment */,
 				7732D8312810D631003E08A9 /* Products */,
+				4723583A7F8D53A2268387FD /* Pods */,
+				5A1DB108653A86232172492F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +150,7 @@
 				7732D86F2810E4A1003E08A9 /* SearchCity */,
 				7732D86D2810E4A1003E08A9 /* Splash */,
 				7732D8702810E4A1003E08A9 /* WeatherList */,
+				7732D89D2813F198003E08A9 /* MasterViewController.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -180,9 +207,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7732D8442810D633003E08A9 /* Build configuration list for PBXNativeTarget "LocusAssignment" */;
 			buildPhases = (
+				22AC371C5CFBB8765280DD5E /* [CP] Check Pods Manifest.lock */,
 				7732D82C2810D631003E08A9 /* Sources */,
 				7732D82D2810D631003E08A9 /* Frameworks */,
 				7732D82E2810D631003E08A9 /* Resources */,
+				C295BDFE9B1E8EC736ECAFF5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -238,6 +267,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		22AC371C5CFBB8765280DD5E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LocusAssignment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C295BDFE9B1E8EC736ECAFF5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LocusAssignment/Pods-LocusAssignment-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LocusAssignment/Pods-LocusAssignment-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LocusAssignment/Pods-LocusAssignment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7732D82C2810D631003E08A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -258,6 +329,7 @@
 				7732D8342810D631003E08A9 /* AppDelegate.swift in Sources */,
 				7732D8362810D631003E08A9 /* SceneDelegate.swift in Sources */,
 				7732D8812810E5A6003E08A9 /* WeatherDetailViewController.swift in Sources */,
+				7732D89E2813F198003E08A9 /* MasterViewController.swift in Sources */,
 				7732D89128112DE1003E08A9 /* WeatherListModel.swift in Sources */,
 				7732D8782810E4FC003E08A9 /* SplashViewController.swift in Sources */,
 			);
@@ -403,6 +475,7 @@
 		};
 		7732D8452810D633003E08A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFC432B9A5936CBB00688655 /* Pods-LocusAssignment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -422,6 +495,7 @@
 		};
 		7732D8462810D633003E08A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED53BD0C2F09E5764EB1A888 /* Pods-LocusAssignment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

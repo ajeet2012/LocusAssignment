@@ -6,13 +6,16 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
-class SplashViewController: UIViewController {
+class SplashViewController: MasterViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+          
+          
             self.performSegue(withIdentifier: "SearchCityViewController", sender: nil)
         }
 

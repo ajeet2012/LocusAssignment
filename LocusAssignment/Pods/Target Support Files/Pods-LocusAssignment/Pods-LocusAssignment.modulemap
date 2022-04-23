@@ -1,0 +1,6 @@
+framework module Pods_LocusAssignment {
+  umbrella header "Pods-LocusAssignment-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,23 +7,42 @@
 
 import UIKit
 
-class WeatherDetailViewController: UIViewController {
-
+class WeatherDetailViewController: MasterViewController {
+    var cityNameString:String?
+    var response:CurrentWheatherDataResponse?
+    //MARK:- UI Object declarations
+    @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var tempreatureLabel: UILabel!
+    @IBOutlet weak var feelsLikeLabel: UILabel!
+    @IBOutlet weak var mainLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    //MARK:- UIViewcontroller lifecycle methods ---
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.showDataOnUI()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK:- Show data on UI ---
+    func showDataOnUI(){
+        if let cityName = self.cityNameString{
+            self.headerLabel.text = cityName
+        }
+        if let tempr = self.response?.main?.temp{
+            let temprecture:Double = tempr - 273.15
+            self.tempreatureLabel.text = String(format: "%.2f° C",temprecture)
+        }
+        if let feelLike = self.response?.main?.feelsLike{
+            let temprecture:Double = feelLike - 273.15
+            self.feelsLikeLabel.text = String(format: "%.2f° C",temprecture)
+        }
+        if let weatherMain = self.response?.weather?[0].main{
+            self.mainLabel.text = weatherMain.capitalized
+        }
+        if let description = self.response?.weather?[0].weatherDescription{
+            self.descriptionLabel.text = description.capitalized
+        }
     }
-    */
-
+    //MARK:- UIButton action methods ---
+    @IBAction func backButtonAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
