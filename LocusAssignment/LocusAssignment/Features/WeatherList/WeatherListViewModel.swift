@@ -17,7 +17,7 @@ class WeatherListViewModel {
         
         print("URL string - \(urlString)")
         
-        guard let urlObj = URL(string: urlString) else{
+        guard let urlObj = URL(string: urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else{
             return
         }
         
